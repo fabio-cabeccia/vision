@@ -39,7 +39,7 @@ class GeneralizedRCNN(nn.Module):
     def eager_outputs(self, losses, detections):
         # type: (Dict[str, Tensor], List[Dict[str, Tensor]]) -> Union[Dict[str, Tensor], List[Dict[str, Tensor]]]
         if self.training:
-            return losses
+            return losses, detections
 
         return detections
 
